@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
 
@@ -17,5 +18,11 @@ use App\Http\Controllers\TodoController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('search', function(Request $request) {
+    dd($request->all());
+    // return view('test');
+});
+
 
 Route::get('/todo', [TodoController::class, 'index']);
